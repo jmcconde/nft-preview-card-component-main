@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here]
-- Live Site URL: [Add live site URL here]
+- Solution URL: [https://github.com/jmcconde/nft-preview-card-component-main]
+- Live Site URL: [https://resilient-croquembouche-79a778.netlify.app/]
 
 ## My process
 
@@ -44,7 +44,7 @@ Users should be able to:
 
 ### What I learned
 
-Improved my knowledge in CSS Grid, Flexbox and pseudo elements.
+Improved my knowledge in CSS Grid, Flexbox, pseudo elements and hover states.
 
 ## Author
 
