@@ -1,0 +1,198 @@
+:root {
+    --clr-soft-blue: hsl(215, 51%, 70%);
+    --clr-cyan: hsl(178, 100%, 50%);
+    --clr-background: hsl(217, 54%, 11%);
+    --clr-card-background: hsl(216, 50%, 16%);
+    --clr-line: hsl(215, 32%, 27%);
+
+    --ff-regular: 'Outfit', sans-serif;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-bold: 600;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+body {
+    background-color: var(--clr-background);
+    display: grid;
+    place-content: center;
+    font-family: var(--ff-regular);
+    color: var(--clr-soft-blue);
+    font-weight: var(--fw-light);
+}
+
+.card {
+    max-width: 20rem;
+    padding: 1.6rem;
+    background-color: var(--clr-card-background);
+    border-radius: .8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.card-img {
+    max-width: 302px;
+    max-height: 302px;
+    border-radius: .4rem;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.card-img::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: none;
+    transition: background-color .4s ease-in-out;
+}
+
+.card-img:hover:before {
+    background-color: hsla(178, 100%, 50%, 0.308);
+  }
+
+.view-icon {
+    position: absolute;
+    top: 40%;
+    right: 40%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .4s, opacity .4s ease-in-out;
+}
+
+.card-img:hover .view-icon {
+    visibility: visible;
+    opacity: 1;
+}
+
+.card-title {
+    color: #fff;
+    font-weight: var(--fw-bold);
+}
+
+.card-link {
+    text-decoration: none;
+    color: #fff;
+    transition: color .2s ease-in-out;
+}
+
+.card-link:hover {
+    color: var(--clr-cyan);
+}
+
+.card-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-value {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-value > img {
+    width: 11px;
+    height: 18px;
+}
+
+.card-expiration {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.price-amount {
+    color: var(--clr-cyan);
+    font-weight: var(--fw-bold);
+}
+
+.card-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--clr-line);
+}
+
+.creator {
+    font-size: 1rem;
+}
+
+.creator-avatar {
+    width: 32px;
+    height: 32px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.author-link {
+    text-decoration: none;
+    color: #fff;
+    transition: color .2s ease-in-out;
+}
+
+.author-link:hover {
+    color: var(--clr-cyan);
+}
